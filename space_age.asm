@@ -25,7 +25,7 @@ age:
     divss xmm0, DWORD [rax] ; divide parameter by earth_year_seconds
     
     lea rax, [planet_earth_ratio]     ; dividing by the orbital period in earth years
-    divss xmm0, DWORD [rax + rdi * 4] ; indexing by the parameter
+    divss xmm0, DWORD [rax + rdi * 4] ; indexing by the parameter since it's an enum
     
     ret
 
