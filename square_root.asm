@@ -1,5 +1,12 @@
+
+
 section .text
 global square_root
+
+
+;; Using Binary Seach
+
+
 square_root:
     cmp rdi, 0
     mov rcx, 0
