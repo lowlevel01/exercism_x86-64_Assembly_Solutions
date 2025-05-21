@@ -1,8 +1,7 @@
 default rel
 
-section .text
-global age
 
+section .data
 planet_earth_ratio:
 ; Same order as in the Enum in the tests
     dd 0.2408467            ; MERCURY
@@ -17,7 +16,8 @@ planet_earth_ratio:
 earth_year_seconds:
     dd 31557600.0           
 
-
+section .text
+global age
 age:
     cvtsi2ss xmm0, esi ; transforming parameter to float
     
@@ -25,7 +25,7 @@ age:
     divss xmm0, DWORD [rax] ; divide parameter by earth_year_seconds
     
     lea rax, [planet_earth_ratio]     ; dividing by the orbital period in earth years
-    divss xmm0, DWORD [rax + rdi * 4] ; indexing by the parameter since it's an enum
+    divss xmm0, DWORD [rax + rdi * 4] ; indexing by the parameter
     
     ret
 
