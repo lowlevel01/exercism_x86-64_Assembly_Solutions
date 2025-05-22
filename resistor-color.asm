@@ -73,7 +73,7 @@ color_code:
     jmp .return
 .black:
     cmp byte [rbx+2], 'a'
-    jnz .black
+    jnz .brown
     mov rax, 0
     jmp .return
 .brown:
