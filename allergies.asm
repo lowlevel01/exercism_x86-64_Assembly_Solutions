@@ -1,5 +1,10 @@
 section .text
 global allergic_to
+
+;; can be done with :
+;; bts and setc
+;; but this showcases the stream of thought
+
 allergic_to:
     cmp rsi, 0
     jz .false
