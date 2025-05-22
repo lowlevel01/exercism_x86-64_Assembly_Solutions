@@ -62,6 +62,8 @@ color_code:
 .green:
     cmp byte [rbx+3], 'e'
     jnz .blue
+    cmp byte [rbx], 'g'  ;;; Extra check to avoid error since "blue" also has "e" as the 4th letter
+    jnz .blue
     mov rax, 5
     jmp .return
 
