@@ -69,7 +69,7 @@ color_code:
 .blue:
     cmp byte [rbx+2], 'u'
     jnz .black
-    mov rax, 5
+    mov rax, 6
     jmp .return
 .black:
     cmp byte [rbx+2], 'a'
